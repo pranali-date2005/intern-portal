@@ -733,7 +733,7 @@
         /**
          * API Configuration
          */
-        const API_BASE_URL = 'https://intern-portal-2-lw6s.onrender.com';
+        const API_BASE_URL = ' https://intern-portal-3-uxnw.onrender.com';
 
         
         let authToken = localStorage.getItem('authToken');
@@ -963,8 +963,8 @@
         async function loadDashboardData() {
             try {
                 const [dashboardResult, rewardsResult] = await Promise.all([
-                    api.get('/dashboard'),
-                    api.get('/rewards')
+                    api.get('/api/dashboard'),
+                    api.get('/api/rewards')
                 ]);
 
                 if (dashboardResult.success) {
@@ -1023,7 +1023,7 @@
             leaderboardContent.innerHTML = '<div class="loading">Loading leaderboard data...</div>';
 
             try {
-                const result = await api.get('/leaderboard');
+                const result = await api.get('/api/leaderboard');
                 
                 if (result.success) {
                     leaderboardContent.innerHTML = '';
