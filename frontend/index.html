@@ -913,7 +913,7 @@
             appState.setLoading('loginBtn', true, 'Signing In...');
 
             try {
-                const result = await api.post('/auth/login', { email, password });
+                const result = await api.post('/api/auth/login', { email, password });
                 
                 if (result.success) {
                     authToken = result.token;
@@ -940,7 +940,7 @@
             appState.setLoading('signupBtn', true, 'Creating Account...');
 
             try {
-                const result = await api.post('/auth/register', { name, email, password });
+                const result = await api.post('/api/auth/register', { name, email, password });
                 
                 if (result.success) {
                     authToken = result.token;
